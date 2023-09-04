@@ -1,8 +1,8 @@
 const display = document.querySelector('form input');
 const buttons = document.querySelectorAll('button');
+const special = ['%','/','*','-','+']
 
 buttons.forEach( button => {
-
     
     button.addEventListener('click', e => {
         if(e.target.tagName === 'BUTTON'){
@@ -14,6 +14,8 @@ buttons.forEach( button => {
                 display.value = eval(display.value);
             }else{
                 display.value += e.target.dataset.num;
+                if(display.value === '=' || special.includes(display.value)) 
+                    display.value = '';
             }
         }
     });
