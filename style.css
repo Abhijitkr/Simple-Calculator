@@ -11,9 +11,10 @@ main{
 }
 
 article{
-    background-color: #EFD595;
-    padding: 15px;
+    background-color: #EBEF95;
+    padding: 20px;
     border-radius: 10px;
+    user-select: none;
 }
 
 form{
@@ -21,12 +22,24 @@ form{
 }
 
 form input{
+    box-sizing: border-box;
     width: 100%;
     height: 60px;
     margin: 5px;
     border-radius: 10px;
     border: none;
     margin-bottom: 10px;
+    font-size: 20px;
+    text-align: end;
+    background-color: #FFBB5C;
+    outline: none;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    color: #352F44;
+    pointer-events: none;
+}
+
+form input:focus, form input:hover{
+    border: 1.5px solid #FAF0E6;
 }
 
 button{
@@ -35,8 +48,25 @@ button{
     margin: 5px;
     border-radius: 10px;
     border: none;
+    background-color: #EFD595;
+    font-size: medium;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    outline: none;
+    cursor: pointer;
+}
+
+button:hover{
+    transform: scale(1.05);
+}
+
+button:active{
+    transform: scale(0.9);
 }
 
 #equal{
     width: 135px;
+}
+
+.operator{
+    color: #C63D2F;
 }
