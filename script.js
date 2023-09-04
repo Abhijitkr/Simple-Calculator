@@ -1,24 +1,26 @@
 const display = document.querySelector('form input');
-const buttons = document.querySelectorAll('button');
+// const buttons = document.querySelectorAll('button');
+const calculator = document.querySelector('article')
 const special = ['%','/','*','-','+'];
 
-buttons.forEach( button => {
-    
-    button.addEventListener('click', e => {
+// buttons.forEach( button => {
+
+    calculator.addEventListener('click', e => {
         if(e.target.tagName === 'BUTTON'){
-            if(e.target.dataset.num === 'AC'){
+            const buttonVal = e.target.dataset.num;
+            if(buttonVal === 'AC'){
                 display.value = '';
-            }else if(e.target.dataset.num === 'DEL'){
+            }else if(buttonVal === 'DEL'){
                 display.value = display.value.slice(0, -1);
-            }else if(e.target.dataset.num === '=' && display.value !== '' ){
+            }else if(buttonVal === '=' && display.value !== '' ){
                 display.value = eval(display.value);
                 // display.value = math.evaluate(display.value);
             }else{
-                display.value += e.target.dataset.num;
+                display.value += buttonVal;
                 if(display.value === '=' || special.includes(display.value)) 
                     display.value = '';
             }
         }
     });
 
-});
+// });
