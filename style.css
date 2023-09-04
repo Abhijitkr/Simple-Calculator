@@ -36,10 +36,8 @@ form input{
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
     color: #352F44;
     pointer-events: none;
-}
-
-form input:focus, form input:hover{
-    border: 1.5px solid #FAF0E6;
+    padding: 10px;
+    letter-spacing: 1px;
 }
 
 button{
